@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Ежедневник</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Шапка приложения -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-book"></i>
+                    <h1>Мой Ежедневник</h1>
+                </div>
+                <p class="subtitle">Организуйте свои задачи эффективно</p>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Секция добавления задачи -->
+            <section class="add-task-section">
+                <h2><i class="fas fa-plus-circle"></i> Новая задача</h2>
+                <form id="taskForm" class="task-form">
+                    <div class="form-group">
+                        <label for="taskTitle">
+                            <i class="fas fa-heading"></i> Название задачи *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="taskTitle" 
+                            class="form-input"
+                            placeholder="Что нужно сделать?"
+                            required
+                            autocomplete="off"
+                        >
+                        <div class="input-hint">Обязательное поле</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDescription">
+                            <i class="fas fa-align-left"></i> Описание
+                        </label>
+                        <textarea 
+                            id="taskDescription" 
+                            class="form-textarea"
+                            placeholder="Детали задачи (необязательно)"
+                            rows="4"
+                        ></textarea>
+                        <div class="input-hint">Можно оставить пустым</div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="addTaskBtn">
+                        <i class="fas fa-plus"></i> Добавить задачу
+                    </button>
+                </form>
+            </section>
+
+            <!-- Секция списка задач -->
+            <section class="tasks-section">
+                <div class="tasks-header">
+                    <h2><i class="fas fa-tasks"></i> Мои задачи</h2>
+                    <div class="tasks-stats">
+                        <span class="task-counter" id="taskCounter">0 задач</span>
+                        <button class="clear-all-btn" id="clearAllBtn">
+                            <i class="fas fa-trash-alt"></i> Очистить все
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Контейнер для карточек задач -->
+                <div class="tasks-container" id="tasksContainer">
+                    <!-- Состояние при отсутствии задач -->
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-state-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Пока нет задач</h3>
+                        <p>Добавьте свою первую задачу с помощью формы выше</p>
+                    </div>
+                    
+                    <!-- Карточки задач будут добавляться сюда динамически -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Подвал -->
+        <footer class="app-footer">
+            <p>Ежедневник &copy; 2023 | Адаптивный дизайн | HTML5, CSS3, Vanilla JS</p>
+            <p class="hint">Задачи сохраняются в браузере автоматически</p>
+        </footer>
+    </div>
+
+    <!-- Подключение JavaScript файла -->
+    <script src="script.js"></script>
+</body>
+</html>
